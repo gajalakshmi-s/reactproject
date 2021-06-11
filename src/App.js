@@ -1,23 +1,24 @@
+import React , { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import AddCart from './sampleComp/add'
+import Headercomp from './header';
+import FooterComp from './footer';
 
 function App() {
+
+  const [HdrText, setHdrText] = React.useState('Welcome to React');
+  const [FtrText, setFtrText] = React.useState('@React');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         My project
-        </a>
-      </header>
+
+      <Headercomp headerText={HdrText} />
+
+      <AddCart />
+
+      <FooterComp footerText={FtrText} />
+    
     </div>
   );
 }
